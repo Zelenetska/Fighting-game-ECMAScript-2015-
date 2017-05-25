@@ -16,8 +16,8 @@ class Fighter {
 }
 
 class ImprovedFighter extends Fighter {
-    doubleHit(point) {
-        super.hit(enemy, point*2);
+    doubleHit (enemy, point) {
+        super.hit(enemy, point * 2);
     }
 }
 
@@ -29,7 +29,7 @@ function fight(fighter, improvedFighter, point) {
             console.log(`${fighter.name} is a winner!`);
             break;
         }
-        improvedFighter.hit(fighter, point);
+        improvedFighter.doubleHit(fighter, point);
         if (fighter.health <= 0) {
             console.log(`${improvedFighter.name} is a winner!`);
             break;
