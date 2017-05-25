@@ -1,15 +1,15 @@
 class Fighter {
     constructor(name, power, health){
         this.name = name;
-        this.power = power;
-        this.health = health;
+        this.power = power || 20;
+        this.health = health || 100;
     }
     setDamage(damage){
         this.health = this.health - damage;
         console.log(`${this.name} health: ${this.health}`);
     }
 
-    hit(enemy, point) {
+    hit(enemy, point){
         var damage = point * this.power;
         enemy.setDamage(damage);
     }
